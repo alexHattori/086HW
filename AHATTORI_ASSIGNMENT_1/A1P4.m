@@ -1,11 +1,10 @@
 syms z;
-func = atan((0.5*z)^3) + 0.02*log(z + 10) + 0.02*z;
-diffFunc = diff(func);
+func(z) = atan((0.5*z)^3) + 0.02*log(z + 10) + 0.02*z;
+diffFunc(z) = diff(func);
 zFinal = zInitial;
-for i = 1:kMax-1
-    poop = zFinal;
-    val1 = double(subs(func,poop));
-    val2 = double(subs(diffFunc,poop));
-    disp(double(val1));
+for i = 2:kMax
+    val1 = func(zFinal);
+    val2 = diffFunc(zFinal);
     zFinal = zFinal-val1/val2;
 end
+zFinal = double(zFinal);
