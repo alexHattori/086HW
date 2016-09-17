@@ -1,0 +1,10 @@
+x = -1:0.1:1;
+y1 = sin(pi*x);
+y2 = sin(pi*x.^2);
+y3 = (sin(pi*x)).^2;
+figure;
+plot(x,y1,'r',x,y2,'bo-',x,y3,'kx-');
+legend('f1','f2','f3');
+xlabel('x');
+ylabel('f(x)');
+title('A2P3');
