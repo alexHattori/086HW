@@ -6,8 +6,8 @@ title('A2P5a');
 xlabel('time');
 ylabel('magnitude of displacement');
 
-xvel = [0 diff(x_stick)];
-yvel = [0 diff(y_stick)];
+xvel = [0 diff(x_stick)./diff(t)];
+yvel = [0 diff(y_stick)./diff(t)];
 velMag = (xvel.^2+yvel.^2).^0.5;
 disp(velMag);
 figure;

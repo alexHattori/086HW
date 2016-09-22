@@ -4,8 +4,8 @@ errorconst = ones(6);
 errorpiece = ones(6);
 for i = 1:6
     x_vec = 0:h(i):1;
-    f_vec = (x_vec).^-2.*(sin(pi*x_vec));
-    realVal = (x^-2)*sin(pi*x);
+    f_vec = (x_vec).^2.*(sin(pi*x_vec));
+    realVal = (x^2)*sin(pi*x);
     A2P4a;
     errorconst(i)= abs(Interp_f_h-realVal);
     A2P4b;
@@ -13,10 +13,15 @@ for i = 1:6
 end
 
 figure;
+errorconst = errorconst';
+errorconst = errorconst(1,:);
 
-plot(1./h,errorconst,'k*-',1./h,errorpiece,'ro-');
+errorpiece = errorpiece';
+errorpiece = errorpiece(1,:);
+
+loglog(1./h,errorconst,'k*',1./h,errorpiece,'ro');
 title('A2P4c');
-xlabel('Errors');
-ylabel('1/step size');
+ylabel('Errors');
+xlabel('-Log(step size)');
 legend('Left End Constant','Linear');
 
