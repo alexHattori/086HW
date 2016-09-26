@@ -1,0 +1,1 @@
+comment1 = 'A trapezoidal integration will exactly integrate a linear function.';

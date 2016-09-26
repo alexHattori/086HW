@@ -1,0 +1,1 @@
+comment2 = 'A right rectangle and a trapezoidal approximation would both satisfy the conditions';
