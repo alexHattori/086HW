@@ -6,7 +6,7 @@ for i = 2:kMax
     val1 = func(zFinal);
     val2 = diffFunc(zFinal);
     zFinal = zFinal-val1/val2;
-    zFinal = double(zFinal);
-    disp('Iter');
+    zFinal = double(zFinal);              %Change since submit to help run faster
+    disp('Iter');                         %End of change
 end
 zFinal = double(zFinal);
