@@ -1,0 +1,9 @@
+
+
+diagMat = ones(1,N);
+lowDiag = -ones(1,N-1);
+
+Tinv = diag(diagMat)+diag(lowDiag,-1);
+
+ks = 100*ones(1,N);
+K_x = diag(ks)
