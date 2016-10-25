@@ -1,15 +1,13 @@
-theta1 = pi/4;
-theta2 = 3*pi/4;
+syms theta1 theta2
+J(theta1,theta2) = [-0.3*(sin(theta1)),-0.3*(sin(theta2));0.3*cos(theta1),0.3*cos(theta2)];
 
-l1 = 0.3;
-l2 = 0.3;
+Js = double(J(pi/4,3*pi/4));
 
-Jt = [l1*cos(theta1) l1*sin(theta1); l2*cos(theta2) l2*sin(theta2)];
+Jt = Js';
 
-r1 = pi/4;
-r2 = pi/2;
+T = [1,0;1,1];
 
-Jm = [l1*cos(r1) l1*sin(r1); l2*cos(r2) l2*sin(r2)];
+Jm = (Js*T)'; 
 
 CommentA5P3c = 'Hand forces can be determined and they are unique';
 CommentA5P3d = CommentA5P3c;

@@ -1,3 +1,5 @@
+function [u,U,fhat] = GEBasic(A,f)
+
 B = [A,f];
 numRows = length(B(:,1));
 
@@ -14,4 +16,15 @@ for i = 1:numRows-1
     end
 end
 
+U = B(1:3,1:3);
+fhat = B(:,4);
+
+u = ones(numRows,1);
+for i = 1:numRows
+    sum = U*u;
+    for j = 2:numRows
+        
+    end
+    u(numRows+1-i)=sum(numRows+1-i);
+end
 
