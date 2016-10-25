@@ -1,0 +1,14 @@
+A = [A,f];
+numRows = length(A(:,1));
+for i = 1:numRows-1
+    while(A(i,i)==0)
+        temp = A(i,:);
+        new = A(i+1,:);
+        A(i,:) = new;
+        A(i+1,:)= temp;
+    end
+    scaling = -A(i,i)/A(i+1,i);
+end
+
+    
+
