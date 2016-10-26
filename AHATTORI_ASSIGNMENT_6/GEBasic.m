@@ -16,8 +16,8 @@ for i = 1:numRows-1
     end
 end
 
-U = B(1:3,1:3);
-fhat = B(:,4);
+U = B(1:numRows,1:numRows);
+fhat = B(:,numRows+1);
 
 u = zeros(numRows,1);
 
