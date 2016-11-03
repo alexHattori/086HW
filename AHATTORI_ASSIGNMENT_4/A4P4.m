@@ -45,7 +45,7 @@ max_angle =  0.3335;
 
 %Eigen vector occus when theta = 0   === Indexes 0,97
 eig_1 = [1,0];
-eig2 = [0,1];
+eig_2 = [0,1];
 
 lam_1 = 10;
 lam_2 = -20;
