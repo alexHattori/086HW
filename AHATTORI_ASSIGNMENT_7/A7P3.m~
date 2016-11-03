@@ -23,27 +23,27 @@ dr_err = mean(((dat(:,1)-xdr).^2+(dat(:,2)-ydr).^2).^0.5);
 %Least Squares Start
 svel = 0.35;
 
-f = [dat(:,3);dat(1:98,5)/svel;dat(:,4);dat(1:98,6)/svel];
+f = [dat(:,3);dat(1:98,5);dat(:,4);dat(1:98,6)];
 
 lT = tril(ones(99,99));
 zeronine = zeros(99,99);
 zeroeight = zeros(98,99);
-vals = ones(1,98)/svel;
+vals = ones(1,98)*svel;
 vels = diag(vals,1);
 vels = vels(1:98,:);
 
-A = [lT,zeronine;
-    vels,zeroeight;
-    zeronine,lT;
+Ax = [lT,zeronine;
+    zeroeight,vels;
+    lT,zeronine;
     zeroeight,vels];
 
-out = (A'*A)\(A'*f);
+out = A'*A\f;
 
 tallx = [out(1);zeros(97,1)];
-tally = [out(100);zeros(97,1)];
+tally = [out(1);zeros(97,1)];
 
-test = out(2:99);
-test2 = out(101:198);
+test = outx(2:99);
+test2 = outy(2:99);
 
 dat2 = [tallx,tally,test,test2];
 
