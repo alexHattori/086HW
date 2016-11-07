@@ -14,12 +14,14 @@ yf(1)  = 0.325474599351056
 yf(99) = 16.818616736421603
 %}
 
+a = 2*[-2 12 -2 10]; 
+
 n = size(x,1);% length of any of the position elements
 
 figure(1);clf;hold off;
 
 subplot(221) ; plot(x,y,'k.-',x(1),y(1),'ko',x(n),y(n),'k*'); 
- title('True x,y [ o:start, *:end) ]'); ylabel('North, m');
+ axis(a),title('True x,y [ o:start, *:end) ]'); ylabel('North, m');
 
 subplot(222) ; plot(xm,ym,'r.-',x(1),y(1),'ko',x(n),y(n),'k*'); 
 title('Measured x,y');
