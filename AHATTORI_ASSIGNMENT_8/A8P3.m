@@ -12,8 +12,8 @@ for i = 1:length(dt)
     t = 0:dt(i):6*tau;
     v = zeros(length(t),1);
     v(1) = v0;
-    for j = 2:length(v)
-        v(j) = v(j-1)-dt(i)*tau*v(j-1);
+    for j = 1:length(v)-1
+        v(j+1) = v(j)-dt(i)*tau*v(j);
     end;
     plot(t,v);
     hold on;
@@ -33,19 +33,20 @@ c = 1;
 
 dt2 = [tau,tau/2,tau/10];
 
+v0 =1;
 figure('Name','NonLinearFirstOrder','NumberTitle','off');
 
 for i = 1:length(dt2)
     t = 0:dt2(i):6*tau;
     v = zeros(length(t),1);
     v(1) = v0;
-    for j = 2:length(v)
-        if v(j-1) == 0
+    for j = 1:length(v)-1
+        if v(j) == 0
             sign = 0;
         else
-            sign = v(j-1)/abs(v(j-1));
+            sign = v(j)/abs(v(j));
         end;
-        v(j) = v(j-1)-dt2(i)*c*sign;
+        v(j+1) = v(j)-dt2(i)*c*sign;
     end;
     plot(t,v);
     hold on;
