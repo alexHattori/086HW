@@ -50,6 +50,6 @@ xlabel('Theta');
 ylabel('Omega');
 title('Phase Plot of Theta vs Omega with varying starting angles');
 
-commentA8P4c = '1 radian is too big because you can see that energy is starting to increase (omega is increasing). 0.1 radians seems to follow the basic laws of physics.';
+commentA8P4c = '2.9 radians is too big because you can see that energy is starting to increase (theta increases wildly). 0.1 radians (also 1 radian is pretty close) seems to follow the basic laws of physics.';
 
-commentA8P4d = 'The mathematical model certainly obeys energy conservation. However, because omega appears to increase (in the phase plot it actually spirals out), energy seems to be added into the system and thus doesn not obey energy conservation.';
+commentA8P4d = 'The mathematical model certainly obeys energy conservation. However, because omega appears to increase (in the phase plot it actually spirals out), energy seems to be added into the system and thus does not obey energy conservation.';
