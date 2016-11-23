@@ -24,5 +24,4 @@ for i = 1:length(alphas)
 end
 legend('Origin','alpha = 0.1','alpha = 0.2', 'alpha = 0.3');
 
-r_DT = 
-norm ((r_DT - r_NT)./(r_DT)) * 100,
+A9P1b = 4;
