@@ -40,4 +40,21 @@ title('A10P1d trials with rand and transformation');
 xlabel('Outcome');
 ylabel('Probability');
 
-A10P1e_p = 
+A10P1e_p = 21/36;
+
+% rng('default');
+% V = randi([1,6],1,1024)+randi([1,6],1,1024);
+% W = sum(V>=7);
+% mean = W/1024;
+
+% mean128 =  0.5547;
+% mean1024 = 0.5830;
+% 
+% curmean = mean1024
+% con = 0.95;
+% zscore = 1.96;
+% n = 128;
+% 
+% CI = [curmean+zscore^2/(2*n)-zscore*sqrt(curmean*(1-curmean)/n+zscore^2/(4*n^2))/(1+zscore^2/n),curmean+zscore^2/(2*n)+zscore*sqrt(curmean*(1-curmean)/n+zscore^2/(4*n^2))/(1+zscore^2/n)]
+
+commentA10P1f = 'yyyy';
