@@ -2,6 +2,7 @@ function [area_est,area_conf_int] = MC_area(alpha,c,x1pts,x2pts)
 
 RectArea = 4*c*c;
 pointsIn = 0;
+numPoints = length(x1pts);
 for i = 1:length(x1pts)
     curX1 = x1pts(i);
     curX2 = x2pts(i);
@@ -11,9 +12,6 @@ for i = 1:length(x1pts)
 end
 
 area_est = RectArea*pointsIn/length(x1pts);
-curmean = area_est;
-zscore = 1.96;
-n = length(x1pts);
 
-area_conf_int = [curmean+zscore^2/(2*n)-zscore*sqrt(curmean*(1-curmean)/n+zscore^2/(4*n^2))/(1+zscore^2/n),curmean+zscore^2/(2*n)+zscore*sqrt(curmean*(1-curmean)/n+zscore^2/(4*n^2))/(1+zscore^2/n)];
+area_conf_int = [RectArea*(pointsIn/numPoints-1.96*sqrt(pointsIn/numPoints*(1-pointsIn/numPoints)/numPoints)),RectArea*(pointsIn/numPoints+1.96*sqrt(pointsIn/numPoints*(1-pointsIn/numPoints)/numPoints))];
 
